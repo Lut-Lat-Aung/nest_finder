@@ -37,7 +37,6 @@ const Navbar = () => {
 
 
             </div>
-            This is where the navbar will go
             </div>
     );
 }

@@ -13,7 +13,7 @@ interface Apartment {
   roomType: string;
 }
 
-const HomePage = () => {
+const FindNests = () => {
   const [apartments, setApartments] = useState<Apartment[]>([]);
 
   useEffect(() => {
@@ -30,7 +30,6 @@ const HomePage = () => {
   };
 
   return (
-    
     <div className="container mx-auto p-4">
       <h1 className="text-rose-500 text-2xl mb-4">Available Nests</h1>
       
@@ -49,4 +48,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default FindNests;

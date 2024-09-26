@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import ImageUpload from '../../app/components/ImageUpload/ImageUpload';
 
 interface Apartment {
   _id?: string;
@@ -46,6 +47,12 @@ const NestYourHome = () => {
   // Add a new apartment to the database
   const addApartment = async () => {
     try {
+
+      if (!newApartment.image || !newApartment.name || !newApartment.location || !newApartment.rentPrice || !newApartment.roomType || !newApartment.description) {
+        alert('Please enter every infomation to add an apartment.');
+        return;
+      }
+      
       await axios.post('/api/apartments', newApartment);
       alert('Apartment added successfully!');
       setNewApartment({
@@ -69,6 +76,9 @@ const NestYourHome = () => {
     if (!editingApartment?._id) return;
 
     try {
+      
+      
+
       await axios.put('/api/apartments', editingApartment);
       alert('Apartment updated successfully!');
       setIsEditMode(false); // Exit edit mode
@@ -133,17 +143,17 @@ const NestYourHome = () => {
       {isFormVisible && (
         <div className="mt-8" >
           <h3 className="text-xl mb-2">{isEditMode ? 'Edit Apartment' : 'Add New Apartment'}</h3>
-          <input
-            type="text"
-            placeholder="Image URL"
-            value={isEditMode ? editingApartment?.image : newApartment.image}
-            onChange={(e) => isEditMode
-              ? setEditingApartment({ ...editingApartment, image: e.target.value })
-              : setNewApartment({ ...newApartment, image: e.target.value })
-            }
-            className="block w-full p-2 border mb-2 rounded"
-            required
+          
+          <ImageUpload
+            value={isEditMode && editingApartment ? editingApartment.image || '' : newApartment.image || ''}
+            onChange={(url) => {
+              isEditMode ?
+                setEditingApartment(prev => ({ ...prev, image: url })) :
+                setNewApartment(prev => ({ ...prev, image: url }));
+            }}
           />
+
+
           <input
             type="text"
             placeholder="Name"

@@ -13,12 +13,37 @@ export async function GET() {
 
 // POST new apartment
 export async function POST(request: Request) {
-  const client = await clientPromise;
-  const db = client.db('test');
-  const newApartment = await request.json();
-  await db.collection('apartments').insertOne(newApartment);
-  return NextResponse.json(newApartment);
+  try {
+    const { image, name, location, rentPrice, rentDuration, roomType, description } = await request.json();
+
+    // Validate received data
+    if (!image || !name || !location || !rentPrice || !rentDuration || !roomType || !description) {
+      return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
+    }
+
+    const client = await clientPromise;
+    const db = client.db('test'); // Replace with your database name
+
+    // Insert the new apartment
+    const result = await db.collection('apartments').insertOne({
+      image,
+      name,
+      location,
+      rentPrice,
+      rentDuration,
+      roomType,
+      description,
+      createdAt: new Date()
+    });
+
+    const newApartment = await db.collection('apartments').findOne({ _id: result.insertedId });
+    return NextResponse.json({ message: 'Apartment added successfully', apartment: newApartment }, { status: 201 });
+  } catch (error) {
+    console.error('Error in POST /api/apartments:', error);
+    return NextResponse.json({ error: 'An error occurred while adding the apartment' }, { status: 500 });
+  }
 }
+
 
 // PUT (update) apartment
 export async function PUT(request: Request) {

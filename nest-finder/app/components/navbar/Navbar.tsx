@@ -29,7 +29,6 @@ const Navbar = () => {
 
 
                         <Logo/>
-                        <Search/>
                         <UserMenu/>
 
                     </div>

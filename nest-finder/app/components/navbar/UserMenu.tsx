@@ -1,11 +1,8 @@
 "use client";
 // React libraries
 import React, { FC, useCallback, useState } from 'react';
-// Icons
-import { AiOutlineMenu } from 'react-icons/ai';
-import { signOut } from 'next-auth/react';
-import { SafeUser } from '@/app/types';
 
+import { SafeUser } from '@/app/types';
 import { useRouter } from 'next/navigation';
 
 interface UserMenuProps {
@@ -13,8 +10,6 @@ interface UserMenuProps {
 }
 
 const UserMenu: FC<UserMenuProps> = ({ currentUser }) => {
-
-
   const router = useRouter();
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -33,24 +28,33 @@ const UserMenu: FC<UserMenuProps> = ({ currentUser }) => {
     router.push('/');
   }, [router]);
 
+  // Navigate to Booked Apartments page
+  const onViewBookings = useCallback(() => {
+    router.push('/booked-apartments');
+  }, [router]);
+
   return (
     <div className='relative'>
       <div className='flex flex-row items-center gap-3'>
         <div
-          onClick={onNestYourHome} // Navigate to the "Nest your Home" page
+          onClick={onNestYourHome}
           className='hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer'
         >
           Nest your Home
         </div>
         <div
-          onClick={onFindNests} // Navigate to the Home page (now Find Nests page)
+          onClick={onFindNests}
           className='hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer'
         >
           Find Nests
         </div>
-        
+        <div
+          onClick={onViewBookings} // Navigate to the "Booked Apartments" page
+          className='hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer'
+        >
+          View Booking
+        </div>
       </div>
-      
     </div>
   );
 };

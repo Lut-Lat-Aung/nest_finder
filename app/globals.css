@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, :root{
+  height: 100%;
+}
+
+/* Add any custom global styles here */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}

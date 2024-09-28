@@ -96,7 +96,7 @@ const deleteProfile = async (id: string) => {
     console.error('Failed to delete profile:', error);
     alert('An error occurred while deleting the profile.');
   }
-};W
+};
 
 
   // Handle form submission

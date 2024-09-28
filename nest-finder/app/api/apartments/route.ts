@@ -1,34 +1,32 @@
 import { NextResponse } from 'next/server';
 import clientPromise from '../../libs/mongodb';
 import { ObjectId } from 'mongodb';
-import { Apartment } from '@prisma/client';
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
 
 // GET apartments
 export async function GET() {
-  const client = await clientPromise;
-  const db = client.db('test');
-  const apartments = await db.collection<Apartment>('apartments').find({}).toArray();
-  return NextResponse.json(apartments);
+  try {
+    const client = await clientPromise;
+    const db = client.db('test'); // Replace 'test' with your database name
+
+    // Fetch all apartments from the database
+    const apartments = await db.collection('apartments').find({}).toArray();
+
+    return NextResponse.json(apartments);
+  } catch (error) {
+    console.error('Failed to fetch apartments:', error);
+    return NextResponse.json({ message: 'Failed to fetch apartments', error }, { status: 500 });
+  }
 }
 
-// POST new apartment
+// POST a new apartment
 export async function POST(request: Request) {
   try {
+    const client = await clientPromise;
+    const db = client.db('test');
     const { image, name, location, rentPrice, rentDuration, roomType, description } = await request.json();
 
-    // Validate received data
-    if (!image || !name || !location || !rentPrice || !rentDuration || !roomType || !description) {
-      return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
-    }
-
-    const client = await clientPromise;
-    const db = client.db('test'); 
-
-    // Insert the new apartment
-    const result = await db.collection('apartments').insertOne({
+    // Create a new apartment document
+    const newApartment = {
       image,
       name,
       location,
@@ -36,33 +34,62 @@ export async function POST(request: Request) {
       rentDuration,
       roomType,
       description,
-      createdAt: new Date()
-    });
+      createdAt: new Date(),
+    };
 
-    const newApartment = await db.collection('apartments').findOne({ _id: result.insertedId });
-    return NextResponse.json({ message: 'Apartment added successfully', apartment: newApartment }, { status: 201 });
+    const result = await db.collection('apartments').insertOne(newApartment);
+
+    return NextResponse.json({ message: 'Apartment added successfully.', apartment: newApartment }, { status: 201 });
   } catch (error) {
-    console.error('Error in POST /api/apartments:', error);
-    return NextResponse.json({ error: 'An error occurred while adding the apartment' }, { status: 500 });
+    console.error('Failed to add apartment:', error);
+    return NextResponse.json({ message: 'Failed to add apartment', error }, { status: 500 });
   }
 }
 
-
-// PUT (update) apartment
+// PUT (update) an apartment
 export async function PUT(request: Request) {
-  const client = await clientPromise;
-  const db = client.db('test');
-  const { _id, ...updatedApartment } = await request.json();
-  await db.collection('apartments').updateOne({ _id: new ObjectId(_id) }, { $set: updatedApartment });
-  return NextResponse.json({ message: 'Apartment updated' });
+  try {
+    const client = await clientPromise;
+    const db = client.db('test');
+    const { _id, ...updatedApartment } = await request.json();
+
+    const result = await db.collection('apartments').updateOne(
+      { _id: new ObjectId(_id) },
+      { $set: updatedApartment }
+    );
+
+    if (result.modifiedCount === 0) {
+      return NextResponse.json({ message: 'Apartment not found.' }, { status: 404 });
+    }
+
+    return NextResponse.json({ message: 'Apartment updated.' });
+  } catch (error) {
+    console.error('Failed to update apartment:', error);
+    return NextResponse.json({ message: 'Failed to update apartment', error }, { status: 500 });
+  }
 }
 
-// DELETE apartment
+// DELETE an apartment
 export async function DELETE(request: Request) {
-  const client = await clientPromise;
-  const db = client.db('test');
-  const { searchParams } = new URL(request.url);
-  const id = searchParams.get('id');
-  await db.collection('apartments').deleteOne({ _id: new ObjectId(id!) });
-  return NextResponse.json({ message: 'Apartment deleted' });
+  try {
+    const client = await clientPromise;
+    const db = client.db('test');
+    const { searchParams } = new URL(request.url);
+    const id = searchParams.get('id');
+
+    if (!id || !ObjectId.isValid(id)) {
+      return NextResponse.json({ message: 'Invalid apartment ID.' }, { status: 400 });
+    }
+
+    const result = await db.collection('apartments').deleteOne({ _id: new ObjectId(id) });
+
+    if (result.deletedCount === 0) {
+      return NextResponse.json({ message: 'Apartment not found.' }, { status: 404 });
+    }
+
+    return NextResponse.json({ message: 'Apartment deleted.' });
+  } catch (error) {
+    console.error('Failed to delete apartment:', error);
+    return NextResponse.json({ message: 'Failed to delete apartment', error }, { status: 500 });
+  }
 }

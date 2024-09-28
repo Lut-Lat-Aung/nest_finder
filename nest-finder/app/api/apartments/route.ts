@@ -2,6 +2,9 @@ import { NextResponse } from 'next/server';
 import clientPromise from '../../libs/mongodb';
 import { ObjectId } from 'mongodb';
 import { Apartment } from '@prisma/client';
+import { PrismaClient } from '@prisma/client';
+
+const prisma = new PrismaClient();
 
 // GET apartments
 export async function GET() {

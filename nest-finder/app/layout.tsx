@@ -3,7 +3,6 @@ import Navbar from "./components/navbar/Navbar";
 import "./globals.css";
 import {Nunito} from 'next/font/google';
 
-
 export const metadata = {
   title: "Nest Finder",
   description: "Find your next nest",

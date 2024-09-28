@@ -11,13 +11,14 @@ if (!process.env.DATABASE_URL) {
 }
 
 if (process.env.NODE_ENV === 'development') {
-  
-  if (!global._mongoClientPromise) {
+  // In development mode, use a global variable to preserve connection state
+  if (!(global as any)._mongoClientPromise) {
     client = new MongoClient(uri, options);
-    global._mongoClientPromise = client.connect();
+    (global as any)._mongoClientPromise = client.connect();
   }
-  clientPromise = global._mongoClientPromise;
+  clientPromise = (global as any)._mongoClientPromise;
 } else {
+  // In production, it's best to not use a global variable
   client = new MongoClient(uri, options);
   clientPromise = client.connect();
 }

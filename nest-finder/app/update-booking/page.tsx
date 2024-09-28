@@ -26,7 +26,7 @@ interface Booking {
 const UpdateBookingPage = () => {
   const router = useRouter();
   const searchParams = useSearchParams(); // Use useSearchParams to get query parameters
-  const bookingId = searchParams.get('id'); // Get the booking ID from the URL
+  const bookingId = searchParams ? searchParams.get('id') : null; // Get the booking ID from the URL if searchParams is not null
 
   const [booking, setBooking] = useState<Booking | null>(null);
   const [renterName, setRenterName] = useState(''); // State for renter's name

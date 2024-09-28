@@ -13,7 +13,10 @@ interface BookedApartment {
   };
   rentOption: string;
   bookedAt: string;
+  renterName: string;
+  phoneNumber: string;
 }
+
 
 const BookedApartmentsPage = () => {
   const [bookedApartments, setBookedApartments] = useState<BookedApartment[]>([]);
@@ -86,7 +89,14 @@ const handleUpdate = (id: string) => {
   <h2 className="text-xl font-semibold">{booking.apartment.name}</h2>
   <p>{booking.apartment.location}</p>
   <p>{booking.rentOption} rental</p>
+  
   <p>Booked on: {new Date(booking.bookedAt).toLocaleDateString()}</p>
+
+<br></br>
+  <p>Booked by: {booking.renterName || 'Unknown'}</p>
+  <p>Contact Number: {booking.phoneNumber || 'Unknown'}</p>
+
+
   <div className="flex space-x-4 mt-4">
     <button
       onClick={() => handleDelete(booking.id)} // Ensure this is the correct ID

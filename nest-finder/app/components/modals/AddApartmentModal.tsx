@@ -27,7 +27,7 @@ const AddApartmentModal: React.FC<AddApartmentModalProps> = ({ isOpen, onClose }
     };
 
     return (
-        <Modal isOpen={isOpen} onClose={onClose} title="Add Apartment">
+        <Modal isOpen={isOpen} onClose={onClose}>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="flex flex-col gap-4">
                     <input

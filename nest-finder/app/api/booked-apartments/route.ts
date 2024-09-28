@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import clientPromise from '../../libs/mongodb'; // Adjust this path based on your project structure
+import clientPromise from '../../libs/mongodb'; 
 import { ObjectId } from 'mongodb';
 
 
@@ -7,7 +7,7 @@ import { ObjectId } from 'mongodb';
 export async function GET(request: Request) {
     try {
       const client = await clientPromise;
-      const db = client.db('test'); // Replace 'test' with your database name
+      const db = client.db('test'); 
       const { searchParams } = new URL(request.url);
     const id = searchParams.get('id');
 
@@ -29,6 +29,8 @@ export async function GET(request: Request) {
             apartmentId: 1,
             rentOption: 1,
             bookedAt: 1,
+            renterName: 1,
+            phoneNumber: 1,
             apartment: '$apartmentDetails' // Include apartment details in response
           }
         }
@@ -51,7 +53,7 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   try {
     const client = await clientPromise;
-    const db = client.db('test'); // Replace 'test' with your database name
+    const db = client.db('test'); 
     const requestBody = await request.json();
 
     // Log the incoming request body
@@ -110,8 +112,8 @@ export async function POST(request: Request) {
     }
 
     // Log the inserted booking for verification
-    console.log('Booking created successfully:', result.ops ? result.ops[0] : booking);
-    return NextResponse.json({ message: 'Apartment booked successfully.', booking: result.ops ? result.ops[0] : booking }, { status: 201 });
+    console.log('Booking created successfully:', booking);
+    return NextResponse.json({ message: 'Apartment booked successfully.', booking: { ...booking, _id: result.insertedId } }, { status: 201 });
   } catch (error) {
     console.error('Failed to book apartment:', error);
     return NextResponse.json({ message: 'Failed to book apartment', error }, { status: 500 });

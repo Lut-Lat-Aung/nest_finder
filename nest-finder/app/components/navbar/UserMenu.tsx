@@ -1,9 +1,6 @@
-"use client";
-// React libraries
-import React, { FC, useCallback, useState } from 'react';
-
-import { SafeUser } from '@/app/types';
 import { useRouter } from 'next/navigation';
+import { SafeUser } from '@/app/types';
+import { FC, useCallback } from 'react';
 
 interface UserMenuProps {
   currentUser?: SafeUser | null;
@@ -12,26 +9,23 @@ interface UserMenuProps {
 const UserMenu: FC<UserMenuProps> = ({ currentUser }) => {
   const router = useRouter();
 
-  const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const toggleOpen = useCallback(() => {
-    setIsOpen((value) => !value);
-  }, []);
-
-  // Navigate to Nest your Home page
   const onNestYourHome = useCallback(() => {
     router.push('/nest-your-home');
   }, [router]);
 
-  // Navigate to Find Nests page
   const onFindNests = useCallback(() => {
     router.push('/');
   }, [router]);
 
-  // Navigate to Booked Apartments page
   const onViewBookings = useCallback(() => {
     router.push('/booked-apartments');
   }, [router]);
+
+  const onProfile = useCallback(() => {
+    router.push('/profiles');
+  }, [router]);
+
 
   return (
     <div className='relative'>
@@ -49,10 +43,16 @@ const UserMenu: FC<UserMenuProps> = ({ currentUser }) => {
           Find Nests
         </div>
         <div
-          onClick={onViewBookings} // Navigate to the "Booked Apartments" page
+          onClick={onViewBookings}
           className='hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer'
         >
           View Booking
+        </div>
+        <div
+          onClick={onProfile}
+          className='hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer'
+        >
+          Profiles
         </div>
       </div>
     </div>
@@ -60,3 +60,4 @@ const UserMenu: FC<UserMenuProps> = ({ currentUser }) => {
 };
 
 export default UserMenu;
+

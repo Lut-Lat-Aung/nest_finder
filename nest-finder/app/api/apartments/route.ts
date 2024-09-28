@@ -1,12 +1,12 @@
 import { NextResponse } from 'next/server';
 import clientPromise from '../../libs/mongodb';
 import { ObjectId } from 'mongodb';
-import { Apartment } from '../../models/Apartment';
+import { Apartment } from '@prisma/client';
 
 // GET apartments
 export async function GET() {
   const client = await clientPromise;
-  const db = client.db('test'); // Replace 'test' with your database name
+  const db = client.db('test');
   const apartments = await db.collection<Apartment>('apartments').find({}).toArray();
   return NextResponse.json(apartments);
 }
@@ -22,7 +22,7 @@ export async function POST(request: Request) {
     }
 
     const client = await clientPromise;
-    const db = client.db('test'); // Replace with your database name
+    const db = client.db('test'); 
 
     // Insert the new apartment
     const result = await db.collection('apartments').insertOne({

@@ -83,7 +83,7 @@ const updateProfile = async () => {
 };
 
 
-const deleteProfile = async (id) => {
+const deleteProfile = async (id: string) => {
   try {
     const response = await axios.delete(`/api/profiles?id=${id}`);
     if (response.status === 200) {
@@ -96,7 +96,7 @@ const deleteProfile = async (id) => {
     console.error('Failed to delete profile:', error);
     alert('An error occurred while deleting the profile.');
   }
-};
+};W
 
 
   // Handle form submission

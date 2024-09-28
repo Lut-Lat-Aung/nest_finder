@@ -10,10 +10,11 @@ const Logo = () => {
     return (
         <Image
         alt="Logo"
-        className="hidden md:block cursor-pointer "
+        className="hidden md:block cursor-pointer logo"
         height="100"
-        width="100"
-        src="/images/logo.webp" />
+        width="130"
+        src="/images/logo.webp"
+         />
     )
 }
 

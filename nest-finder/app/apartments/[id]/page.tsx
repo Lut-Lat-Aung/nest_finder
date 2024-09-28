@@ -103,22 +103,15 @@ const handleRentClick = async () => {
   if (!apartment) return <div>Loading...</div>;
 
   return (
-    <div className="container mx-auto p-4">
+    <div className=" mx-auto p-4">
       {/* Header Section */}
-      <div className="flex flex-col md:flex-row items-center justify-between mb-6">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4 md:mb-0">
+      <h1 className="Title ">
           {apartment.name}
         </h1>
-        <button
-          onClick={handleRentClick}
-          className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
-        >
-          Rent for {apartment.rentDuration === 'night' ? 'Night' : 'Month'}
-        </button>
-      </div>
+        
 
       {/* Apartment Image and Info Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="unique-apartment">
         {/* Image Section */}
         <div className="flex justify-center">
           <img
@@ -129,7 +122,7 @@ const handleRentClick = async () => {
         </div>
 
         {/* Info Section */}
-        <div className="flex flex-col justify-between">
+        <div className="apartment-details">
           <div className="mb-6">
             <h2 className="text-2xl font-semibold text-gray-700 mb-4">
               Apartment Details
@@ -155,22 +148,28 @@ const handleRentClick = async () => {
           </div>
 
           {/* Renter Information */}
-          <div className="mb-6">
+          <div className="renter-input">
             <h3 className="text-lg font-medium text-gray-800 mb-2">Renter Information</h3>
             <input
               type="text"
               placeholder="Renter Name"
               value={renterName}
               onChange={(e) => setRenterName(e.target.value)}
-              className="block w-full p-3 border rounded-lg shadow-sm mb-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="renter-input1"
             />
             <input
               type="text"
               placeholder="Phone Number"
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
-              className="block w-full p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="renter-input1"
             />
+            <button
+          onClick={handleRentClick}
+          className="rent-button"
+        >
+          Rent for {apartment.rentDuration === 'night' ? 'Night' : 'Month'}
+        </button>
           </div>
         </div>
       </div>

@@ -86,7 +86,7 @@ const UpdateBookingPageContent = () => {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="Title mx-auto p-4">
       <h1 className="text-3xl font-bold mb-6">Update Booking Information</h1>
       {booking && booking.apartment && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -122,36 +122,36 @@ const UpdateBookingPageContent = () => {
           </div>
         </div>
       )}
-      <div className="mb-4">
-        <label className="block mb-2 text-lg font-medium">Renter Name</label>
+      <div className="grid-container">
+        <label className="mb-2 text-lg font-medium">Renter Name</label><br></br>
         <input
           type="text"
-          placeholder="Renter Name"
+          placeholder="Enter Renter Name"
           value={renterName}
           onChange={(e) => setRenterName(e.target.value)}
-          className="block w-full p-3 border rounded-lg shadow-sm mb-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="input-field block w-full p-3 border rounded-lg shadow-sm mb-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
       </div>
-      <div className="mb-4">
-        <label className="block mb-2 text-lg font-medium">Phone Number</label>
+      <div className="grid-container mb-4">
+        <label className="block mb-2 text-lg font-medium">Phone Number</label><br></br>
         <input
           type="text"
-          placeholder="Phone Number"
+          placeholder="Enter Phone Number"
           value={phoneNumber}
           onChange={(e) => setPhoneNumber(e.target.value)}
-          className="block w-full p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="input-field block w-full p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
       </div>
       <div className="flex space-x-4">
         <button
           onClick={handleUpdate}
-          className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
+          className="rent-button px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
         >
           Update
         </button>
         <button
           onClick={handleCancel}
-          className="px-6 py-3 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition"
+          className="delete-button px-6 py-3 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition"
         >
           Cancel
         </button>

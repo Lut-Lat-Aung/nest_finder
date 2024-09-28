@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation'; // Use next/navigation for App Router
 import axios from 'axios';
 
+
 interface Apartment {
   _id?: string;
   image: string;
@@ -37,22 +38,22 @@ const HomePage = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-rose-500 text-2xl mb-4">Available Nests</h1>
+    <div className="">
+      <h1 className="Title">Available Nests</h1>
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="apartments-container grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {apartments.map((apartment) => (
-          <div
+          <div><div
             key={apartment._id}
-            className="border p-4 rounded shadow-md cursor-pointer"
+            className="apartment-card border p-4 rounded-lg shadow-lg"
             onClick={() => handleApartmentClick(apartment._id!)} // Navigate to details page
           >
-            <img src={apartment.image} alt={apartment.name} className="w-full h-48 object-cover rounded mb-2" />
+            <img src={apartment.image} alt={apartment.name} className="apartment-image w-full h-48 object-cover rounded mb-4" />
             <h2 className="text-lg font-bold">{apartment.name}</h2>
             <p>{apartment.location}</p>
             <p>${apartment.rentPrice} / {apartment.rentDuration}</p>
             <p>Room Type: {apartment.roomType}</p>
-          </div>
+          </div></div>
         ))}
       </div>
     </div>

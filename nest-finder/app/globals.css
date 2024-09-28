@@ -4,8 +4,604 @@ html, body, :root{
   height: 100%;
 }
 
-/* Add any custom global styles here */
+
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  top:0;
+  margin: 0 auto;
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+
+}
+
+.Title{
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000000;
+  margin-top: 150px;
+  top:0;
+}
 .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  
+}
+
+/* global.css */
+
+/* Global styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* Header container styling */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Title styling */
+.title {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+/* Add button styling */
+.add-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Form container styling */
+.form-container {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* Form title styling */
+.form-title {
+  margin-bottom: 20px;
+}
+
+/* Input field styling */
+.input-field {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* Submit button styling */
+.submit-button, .cancel-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Apartments container styling */
+.apartments-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+/* Apartment card styling */
+.apartment-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.apartment-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Apartment image styling */
+.apartment-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Apartment name styling */
+.apartment-name {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+
+/* Apartment location styling */
+.apartment-location, .apartment-price, .apartment-room-type, .apartment-description {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+/* Edit and delete button styling */
+.edit-button, .delete-button {
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+
+h1.Title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 24px;
+  margin-left: 20px;
+  margin-right:20px;
+}
+
+/* global.css */
+
+/* Global styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* Fixed header */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling */
+.title {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+/* Add button styling */
+.add-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Backdrop and form modal styling */
+.fixed {
+  position: fixed;
+}
+
+.inset-0 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.bg-black {
+  background-color: #000;
+}
+
+.bg-opacity-50 {
+  opacity: 0.5;
+}
+
+.z-30 {
+  z-index: 30;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+
+/* Form modal container */
+.form-modal-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 64px; /* Reduce padding to make the modal smaller */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px; /* Reduce max-width to make the modal smaller */
+  width: 90%; /* Change to 90% to provide some space around */
+}
+
+/* Form title styling */
+.form-title {
+  font-size: 1.3rem; /* Smaller font size for the title */
+  font-weight: bold;
+  color: #333;
+}
+
+/* Input fields */
+.input-field {
+  width: 100%;
+  padding: 7px; /* Slightly reduce padding */
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  margin-bottom: 12px; /* Reduce margin-bottom for compact look */
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* Button group */
+.form-button-group {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Buttons styling */
+.submit-button, .cancel-button {
+  padding: 8px 16px; /* Reduce padding for smaller button size */
+  font-size: 0.9rem; /* Smaller font size */
+  cursor: pointer;
+}
+
+.submit-button {
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+.cancel-button {
+  background-color: #dc3545;
+  color: #fff;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.cancel-button:hover {
+  background-color: #c82333;
+}
+
+
+/* Apartments container styling */
+.apartments-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+/* Apartment card styling */
+.apartment-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.apartment-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Apartment image styling */
+.apartment-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Apartment name styling */
+.apartment-name {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+
+/* Apartment location styling */
+.apartment-location, .apartment-price, .apartment-room-type, .apartment-description {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+/* Edit and delete button styling */
+.edit-button, .delete-button {
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+/* global.css */
+
+/* General styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f3f4f6; /* Light gray background for the whole page */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* Apartment Page Styling */
+.apartment-page {
+  background-color: #f8f9fa;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Section */
+.apartment-header {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Apartment Title */
+.apartment-title {
+  font-size: 2.25rem; /* Larger font size for title */
+  color: #1a202c; /* Darker color for better contrast */
+}
+
+/* Rent Button */
+.rent-button {
+  background-color: #007bff;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.rent-button:hover {
+  background-color: #0056b3;
+}
+
+/* Apartment Details Section */
+.apartment-details {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Apartment Image */
+.apartment-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.apartment-image {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Apartment Info */
+.apartment-info {
+  padding: 16px;
+}
+
+/* Info Items */
+.info-item {
+  display: flex;
+  align-items: center;
+  font-size: 1.125rem;
+  color: #4a5568; /* Text color for info items */
+}
+
+/* Description Section */
+.apartment-description {
+  padding: 16px;
+  background-color: #f7fafc;
+  border-radius: 8px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Renter Information */
+.renter-info {
+  padding: 16px;
+}
+
+/* Input Fields */
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-field:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3);
+}
+
+
+
+/* Grid container for apartments */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 columns */
+  gap: 16px; /* Gap between grid items */
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: 80vh; /* Limit height to 80% of the viewport height */
+  padding-right: 8px; /* Space for scrollbar */
+}
+
+/* Individual apartment card styling */
+.grid-container > div {
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 16px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: #fff;
+}
+
+/* Image styling */
+.grid-container > div img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover; /* Maintain aspect ratio */
+  border-radius: 8px 8px 0 0; /* Rounded corners for the top */
+  margin-bottom: 8px;
+}
+
+/* Apartment name */
+.grid-container > div h2 {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+
+
+
+.grid-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Color on hover */
+}
+
+.unique-apartment{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  
+  /* grid grid-cols-1 md:grid-cols-2 gap-6 */
+}
+
+.apartment-details{
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* flex flex-col justify-between */
+}
+
+.renter-input{
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1.5rem;
+}
+
+.renter-input1{
+  width: 50%;
+  padding: 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-top:10px;
+}
+.button{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-weight: bolder;
+}
+
+.button:hover{
+  background-color: #ffa500;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0;
+}
+
+.nav-links a {
+  color: #000000;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ffa500;
+}
+
+/* Content styling */
+.content {
+  padding-top: 100px; /* Offset for the fixed navbar */
+  text-align: center;
+  margin: 2rem;
+}
+
+.content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.content p {
+  font-size: 1.25rem;
   max-width: 800px;
   margin: 0 auto;
 }

@@ -115,12 +115,12 @@ const deleteProfile = async (id: string) => {
   };
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Profiles</h1>
-      
+    <div className=" mx-auto p-4">
+      <h1 className="Title text-2xl font-bold mb-4">Profiles</h1>
+      <h3 className="container text-xl mb-2">{isEditMode ? 'Edit Profile' : 'Add New Profile'}</h3>
       {/* Form for adding/editing profiles */}
-      <div className="mb-6">
-        <h3 className="text-xl mb-2">{isEditMode ? 'Edit Profile' : 'Add New Profile'}</h3>
+      <div className="container mb-6">
+        
         <input
           type="text"
           placeholder="Name"
@@ -128,7 +128,7 @@ const deleteProfile = async (id: string) => {
           onChange={(e) => isEditMode
             ? setEditingProfile({ ...editingProfile, name: e.target.value })
             : setNewProfile({ ...newProfile, name: e.target.value })}
-          className="block w-full p-2 border mb-2 rounded"
+          className="input-field block w-full p-2 border mb-2 rounded"
           required
         />
         <input
@@ -138,7 +138,7 @@ const deleteProfile = async (id: string) => {
           onChange={(e) => isEditMode
             ? setEditingProfile({ ...editingProfile, email: e.target.value })
             : setNewProfile({ ...newProfile, email: e.target.value })}
-          className="block w-full p-2 border mb-2 rounded"
+          className="input-field block w-full p-2 border mb-2 rounded"
           required
         />
         <select
@@ -146,7 +146,7 @@ const deleteProfile = async (id: string) => {
           onChange={(e) => isEditMode
             ? setEditingProfile({ ...editingProfile, role: e.target.value as 'renter' | 'guest' })
             : setNewProfile({ ...newProfile, role: e.target.value as 'renter' | 'guest' })}
-          className="block w-full p-2 border mb-2 rounded"
+          className="input-field block w-full p-2 border mb-2 rounded"
           required
         >
           <option value="guest">Guest</option>
@@ -159,12 +159,14 @@ const deleteProfile = async (id: string) => {
           onChange={(e) => isEditMode
             ? setEditingProfile({ ...editingProfile, phoneNumber: e.target.value })
             : setNewProfile({ ...newProfile, phoneNumber: e.target.value })}
-          className="block w-full p-2 border mb-4 rounded"
+          className="input-field block w-full p-2 border mb-4 rounded"
           required
         />
-        <button
+      </div>
+      
+      <button
           onClick={handleFormSubmit}
-          className="px-4 py-2 bg-blue-500 text-white rounded"
+          className="input-field px-4 py-2 bg-blue-500 text-white rounded"
         >
           {isEditMode ? 'Update Profile' : 'Add Profile'}
         </button>
@@ -174,17 +176,16 @@ const deleteProfile = async (id: string) => {
               setIsEditMode(false);
               setEditingProfile(null);
             }}
-            className="ml-4 px-4 py-2 bg-red-500 text-white rounded"
+            className="input-field ml-4 px-4 py-2 bg-red-500 text-white rounded"
           >
             Cancel
           </button>
         )}
-      </div>
 
       {/* List of profiles */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="apartments-container grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {profiles.map((profile) => (
-          <div key={profile._id} className="border p-4 rounded shadow-md">
+          <div key={profile._id} className="apartment-card border p-4 rounded-lg shadow-lg">
             <h2 className="text-lg font-bold">{profile.name}</h2>
             <p>{profile.email}</p>
             <p>Role: {profile.role}</p>

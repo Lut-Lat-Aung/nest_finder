@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useRouter, useSearchParams } from 'next/navigation'; // Use useSearchParams for getting query params
 import { FaMapMarkerAlt, FaBed, FaDollarSign } from 'react-icons/fa'; // Import icons for visual appeal
+import { Suspense } from 'react';
 
 interface Apartment {
   _id?: string;
@@ -25,8 +26,9 @@ interface Booking {
 
 const UpdateBookingPage = () => {
   const router = useRouter();
-  const searchParams = useSearchParams(); // Use useSearchParams to get query parameters
-  const bookingId = searchParams ? searchParams.get('id') : null; // Get the booking ID from the URL if searchParams is not null
+  const searchParams = useSearchParams();
+  const bookingId = searchParams.get('id');
+
 
   const [booking, setBooking] = useState<Booking | null>(null);
   const [renterName, setRenterName] = useState(''); // State for renter's name

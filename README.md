@@ -42,7 +42,16 @@ Nest Finder is a web application designed to help the real-estate broker to mana
 - **Manage Profile**: Navigate to "Profiles" and you can add, update and delete profile for hosts and renters.
  
 ## Screenshots
-
+- [HomePage](#HomePage)
+- [ApartmentView](#ApartmentView)
+- [BookedApartments](#BookedApartments)
+- [UpdateApartments](#UpdateApartments)
+- [NestYourHome](#NestYourHome)
+- [AddApartments](#AddApartments)
+- [UpdateApartments](#UpdateApartments)
+- [Profiles](#Profiles)
+- [EditProfiles](#EditProfiles)
+  
 #### Home Page
 ![HomePage](https://github.com/Lut-Lat-Aung/nest_finder/blob/main/image/HomePage.png)
  

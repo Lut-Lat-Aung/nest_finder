@@ -1,6 +1,6 @@
 # Project 02: Full-Stack CRUD App (Nest Finder)
- 
-The target user for this web app is real-estate brokers who will connect property owners (hosts) and potential renters (guests). The application provides an intuitive interface for managing properties and bookings, making it easy to find and reserve your next nest.
+
+Nest Finder is a marketplace websit for people to find temporary homes and vacation rentals. The target user for this web app is real-estate brokers who will connect property owners (hosts) and potential renters (guests). The application provides an intuitive interface for managing client profile, properties and bookings (reservations), making it easy to find and reserve the client's request.
  
  
 **Team Members:**  
@@ -22,14 +22,13 @@ The target user for this web app is real-estate brokers who will connect propert
  
 ## Introduction
  
-Nest Finder is a web application designed to help the real-estate broker to manage apartment listing from property owners (hosts) and record the bookings made by potential renters (guests). There is also a function to record the profiles of both host and guest containing informations.
+Nest Finder is a web application designed to help the real-estate broker to manage apartment listings from property owners (hosts) and record the bookings made by potential renters (guests). There is also a interface to record the profiles of both host and guest containing informations. It make easier for profile management, apartment listing and booking management. Guests can choose from a variety of listings from the market to stay for a night or a month.
  
 ## Features
  
 - **Property Listings**: Can add, update, and delete their property listings with ease.
 - **Reservation Management**: Record, update, delete booked-apartments.
-- **Profile Management**: Edit, update and delete personal information.
-- **Responsive Design**: Optimized for both desktop and mobile devices.
+- **Profile Management**: Add, update and delete personal information.
 - **Cloudinary Integration**: Upload and manage property images using Cloudinary.
  
 ## How to Use
@@ -37,36 +36,48 @@ Nest Finder is a web application designed to help the real-estate broker to mana
 - **List a Property**: Navigate to "Nest your Home" and fill in the details to list your property.
 - **Manage Property Listing**:  Edit or delete your property listings as needed.
 - **View Listing**: Navigate to "Find Nests" 
-- **Book a Property for stay**: Navigate to "Find Nest" and click a property of your liking.
+- **Book a Property for stay**: Navigate to "Find Nest" and click a property of your liking. Fill in renter name, phone number and make a booking.
 - **Manage Bookings**: Navigate to "View Booking" and you can edit or delete your booking.
 - **Manage Profile**: Navigate to "Profiles" and you can add, update and delete profile for hosts and renters.
  
 ## Screenshots
+- [HomePage](#HomePage)
+- [ApartmentView](#ApartmentView)
+- [BookedApartments](#BookedApartments)
+- [UpdateApartments](#UpdateApartments)
+- [NestYourHome](#NestYourHome)
+- [AddApartments](#AddApartments)
+- [UpdateApartments](#UpdateApartments)
+- [Profiles](#Profiles)
+- [EditProfiles](#EditProfiles)
+  
+### HomePage
+![HomePage](https://github.com/Lut-Lat-Aung/nest_finder/blob/main/image/HomePage.png)
  
+### ApartmentView
+![ApartmentView](https://github.com/Lut-Lat-Aung/nest_finder/blob/main/image/ApartmentView.png)
  
-Home Page
+### BookedApartments
+![BookedApartments](https://github.com/Lut-Lat-Aung/nest_finder/blob/main/image/BookedApartment.png)
+
+### UpdateApartments
+![UpdateApartments](https://github.com/Lut-Lat-Aung/nest_finder/blob/main/image/UpdateBooking.png)
  
- 
-Home page showcasing available properties.
- 
-Property Details
- 
-Detailed view of a selected property.
- 
-Booked Apartments
- 
- 
-Manage your bookings from the "Booked Apartments" page.
- 
- 
- 
-Profile Management
- 
- 
-Edit and update your profile information.
- 
- 
- 
+### NestYourHome
+![NestYourHome](https://github.com/Lut-Lat-Aung/nest_finder/blob/main/image/NestYourHome.png)
+
+### AddApartments
+![AddApartments](https://github.com/Lut-Lat-Aung/nest_finder/blob/main/image/AddApartment.png)
+
+### UpdateApartments
+![UpdateApartments](https://github.com/Lut-Lat-Aung/nest_finder/blob/main/image/UpdateApartment.png)
+
+### Profiles 
+![Profiles](https://github.com/Lut-Lat-Aung/nest_finder/blob/main/image/ProfilePage.png)
+
+### EditingProfiles
+![EditProfiles](https://github.com/Lut-Lat-Aung/nest_finder/blob/main/image/EditProfile.png)
+
  
 ## Technologies Used
  
@@ -77,6 +88,7 @@ Edit and update your profile information.
 - **DataBase**: MongoDB
 - **Deployment**: Vercel
 - **Image Hosting**: Cloudinary
+  
 ## API
  
 #### Profile Endpoints
@@ -130,8 +142,8 @@ To run the app locally:
  
 5. Open your browser and go to:
  
-   ```
-http://localhost:3000
+   ```bash
+   http://localhost:3000
    ```
  
 ## Contributing
@@ -143,7 +155,7 @@ If you wish to contribute to the project:
 3. Commit your changes (`git commit -m 'Add feature'`).
 4. Push the branch (`git push origin feature-branch`).
 5. Open a pull request.
-6.
+  
  
 ## License
  

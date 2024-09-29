@@ -52,31 +52,31 @@ Nest Finder is a web application designed to help the real-estate broker to mana
 - [Profiles](#Profiles)
 - [EditProfiles](#EditProfiles)
   
-#### Home Page
+### Home Page
 ![HomePage](https://github.com/Lut-Lat-Aung/nest_finder/blob/main/image/HomePage.png)
  
-#### Apartment View
+### Apartment View
 ![ApartmentView](https://github.com/Lut-Lat-Aung/nest_finder/blob/main/image/ApartmentView.png)
  
-#### Booked Apartments
+### Booked Apartments
 ![BookedApartments](https://github.com/Lut-Lat-Aung/nest_finder/blob/main/image/BookedApartment.png)
 
-#### Update Apartments
+### Update Apartments
 ![UpdateApartments](https://github.com/Lut-Lat-Aung/nest_finder/blob/main/image/UpdateBooking.png)
  
-#### Nest Your Home
+### Nest Your Home
 ![NestYourHome](https://github.com/Lut-Lat-Aung/nest_finder/blob/main/image/NestYourHome.png)
 
-#### Add Apartments
+### Add Apartments
 ![AddApartments](https://github.com/Lut-Lat-Aung/nest_finder/blob/main/image/AddApartment.png)
 
 ### Update Apartments
 ![UpdateApartments](https://github.com/Lut-Lat-Aung/nest_finder/blob/main/image/UpdateApartment.png)
 
-#### Profiles 
+### Profiles 
 ![Profiles](https://github.com/Lut-Lat-Aung/nest_finder/blob/main/image/ProfilePage.png)
 
-#### Editing Profiles
+### Editing Profiles
 ![EditProfiles](https://github.com/Lut-Lat-Aung/nest_finder/blob/main/image/EditProfile.png)
 
  

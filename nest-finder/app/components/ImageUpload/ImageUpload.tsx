@@ -31,7 +31,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ onChange, value }) => {
                 {({ open }) => (
                     <div
                         onClick={() => open()} // Trigger upload widget
-                        className="flex flex-col items-center justify-center border-2 border-dashed border-gray-400 rounded-lg cursor-pointer p-4 hover:border-gray-500"
+                        className="input-field flex flex-col items-center justify-center border-2 border-dashed border-gray-400 rounded-lg cursor-pointer p-4 hover:border-gray-500"
                     >
                         <TbPhotoPlus size={50} className="text-gray-500" />
                         {value ? (

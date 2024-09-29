@@ -46,7 +46,7 @@ const NestYourHome = () => {
   const addApartment = async () => {
     try {
       if (!newApartment.image || !newApartment.name || !newApartment.location || !newApartment.rentPrice || !newApartment.roomType || !newApartment.description) {
-        alert('Input or Image is missing. Try again or please use another browser. It might be browser error');
+        alert('Input or Image is missing. Try again or please use another browser(eg. firefox). It might be browser error');
         return;
       }
 

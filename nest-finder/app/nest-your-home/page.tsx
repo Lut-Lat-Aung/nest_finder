@@ -45,7 +45,7 @@ const NestYourHome = () => {
 
   const addApartment = async () => {
     try {
-      if (!newApartment.image || !newApartment.name || !newApartment.location || !newApartment.rentPrice || !newApartment.roomType || !newApartment.description) {
+      if (!newApartment.name || !newApartment.location || !newApartment.rentPrice || !newApartment.roomType || !newApartment.description) {
         alert('Please enter every information to add an apartment.');
         return;
       }

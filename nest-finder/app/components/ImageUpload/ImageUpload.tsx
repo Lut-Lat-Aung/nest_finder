@@ -11,11 +11,17 @@ interface ImageUploadProps {
 }
 
 const ImageUpload: React.FC<ImageUploadProps> = ({ onChange, value }) => {
-    const handleUpload = useCallback((result: any) => {
+    const handleUpload = useCallback((result: { event: string, info: { secure_url: string } }) => {
+        console.log('Upload result:', result); // Add this to check the result object
+      
         if (result.event === "success") {
-            onChange(result.info.secure_url); // Set the uploaded image URL in the parent component state
+          onChange(result.info.secure_url);
+          console.log('Image uploaded successfully:', result.info.secure_url); // Check the uploaded URL
+        } else {
+          console.error('Upload failed or canceled:', result); // Log errors or cancellations
         }
-    }, [onChange]);
+      }, [onChange]);
+      
 
     return (
         <div>

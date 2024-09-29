@@ -156,10 +156,6 @@ If you wish to contribute to the project:
 5. Open a pull request.
   
  
-## License
- 
-This project is licensed under the MIT License.
- 
 ## Contact
  
 For any questions or feedback, please feel free to contact us at lutlataung03@gmail.com

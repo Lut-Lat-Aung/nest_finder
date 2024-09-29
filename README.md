@@ -36,7 +36,7 @@ Nest Finder is a web application designed to help the real-estate broker to mana
 - **List a Property**: Navigate to "Nest your Home" and fill in the details to list your property.
 - **Manage Property Listing**:  Edit or delete your property listings as needed.
 - **View Listing**: Navigate to "Find Nests" 
-- **Book a Property for stay**: Navigate to "Find Nest" and click a property of your liking. Fill in renter name, phone number and make a booking.
+- **Book a Property for stay**: In "Find Nest" Page, click a property of your liking. Fill in renter name, phone number and make a booking.
 - **Manage Bookings**: Navigate to "View Booking" and you can edit or delete your booking.
 - **Manage Profile**: Navigate to "Profiles" and you can add, update and delete profile for hosts and renters.
  
@@ -82,7 +82,6 @@ Nest Finder is a web application designed to help the real-estate broker to mana
 ## Technologies Used
  
 - **Frontend** -
-    React.js
     Next.js
     Axios
 - **DataBase**: MongoDB

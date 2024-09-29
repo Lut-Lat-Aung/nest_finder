@@ -1,6 +1,6 @@
 # Project 02: Full-Stack CRUD App (Nest Finder)
- 
-The target user for this web app is real-estate brokers who will connect property owners (hosts) and potential renters (guests). The application provides an intuitive interface for managing client profile, properties and bookings (reservations), making it easy to find and reserve the client's request.
+
+Nest Finder is a marketplace websit for people to find temporary homes and vacation rentals. The target user for this web app is real-estate brokers who will connect property owners (hosts) and potential renters (guests). The application provides an intuitive interface for managing client profile, properties and bookings (reservations), making it easy to find and reserve the client's request.
  
  
 **Team Members:**  
@@ -22,14 +22,13 @@ The target user for this web app is real-estate brokers who will connect propert
  
 ## Introduction
  
-Nest Finder is a web application designed to help the real-estate broker to manage apartment listings from property owners (hosts) and record the bookings made by potential renters (guests). There is also a interface to record the profiles of both host and guest containing informations. It make easier for profile management, apartment listing and booking management.
+Nest Finder is a web application designed to help the real-estate broker to manage apartment listings from property owners (hosts) and record the bookings made by potential renters (guests). There is also a interface to record the profiles of both host and guest containing informations. It make easier for profile management, apartment listing and booking management. Guests can choose from a variety of listings from the market to stay for a night or a month.
  
 ## Features
  
 - **Property Listings**: Can add, update, and delete their property listings with ease.
 - **Reservation Management**: Record, update, delete booked-apartments.
 - **Profile Management**: Add, update and delete personal information.
-- **Responsive Design**: Optimized for both desktop and mobile devices.
 - **Cloudinary Integration**: Upload and manage property images using Cloudinary.
  
 ## How to Use

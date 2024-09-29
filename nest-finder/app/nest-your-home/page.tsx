@@ -46,7 +46,7 @@ const NestYourHome = () => {
   const addApartment = async () => {
     try {
       if (!newApartment.image || !newApartment.name || !newApartment.location || !newApartment.rentPrice || !newApartment.roomType || !newApartment.description) {
-        alert('Please enter every information to add an apartment.');
+        alert('Input or Image is missing. Try again or please use another browser. It might be browser error');
         return;
       }
 
@@ -164,16 +164,17 @@ const NestYourHome = () => {
         required
       />
       <input
-        type="number"
-        placeholder="Rent Price"
-        value={isEditMode ? editingApartment?.rentPrice : newApartment.rentPrice}
-        onChange={(e) => isEditMode
-          ? setEditingApartment({ ...editingApartment, rentPrice: parseFloat(e.target.value) })
-          : setNewApartment({ ...newApartment, rentPrice: parseFloat(e.target.value) })
-        }
-        className="input-field mb-4"
-        required
-      />
+  type="number"
+  placeholder="Rent Price"
+  value={isEditMode ? editingApartment?.rentPrice || 0 : newApartment.rentPrice || 0}
+  onChange={(e) => isEditMode
+    ? setEditingApartment({ ...editingApartment, rentPrice: parseFloat(e.target.value) })
+    : setNewApartment({ ...newApartment, rentPrice: parseFloat(e.target.value) })
+  }
+  className="
+input-field"
+  required
+/>
       <select
         value={isEditMode ? editingApartment?.rentDuration : newApartment.rentDuration}
         onChange={(e) => isEditMode
